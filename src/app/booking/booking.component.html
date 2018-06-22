@@ -1,0 +1,56 @@
+<body>
+
+
+<div class="scrollmenu">
+
+                <a routerLink='/home'>Home</a>
+                <a routerLink='/booking'>Booking</a>
+                <a routerLink='/about'>About</a>
+                <a routerLink='/contact'>Contact</a>
+                
+                </div>
+
+<h1>Bus Ticket Booking Form</h1>
+
+
+
+<form>
+        Full names :<br>
+        <input type="text" name = "fullnames" [(ngModel)] = "fullnames"><br><br>
+      
+        date of birth:<br>
+        <input type="date" name = "dateofbirth"[(ngModel)] ="dateofbirth"> <br><br>
+      
+        age:<br>
+         <input type="number" name = "age" [(ngModel)]="age"><br><br>
+      
+         Departing From:<br>
+         <input type="text" name = "from" [(ngModel)]="from"><br><br>
+      
+         Arrive To:<br>
+         <input type="text" name = "to"[(ngModel)] ="to"> <br><br>
+      
+         Date:<br>
+         <input type="date" name = "date" [(ngModel)]="date"> <br><br>
+      
+         Time:<br>
+         <input type="time" name ="time"[(ngModel)]="time"> <br><br>
+  
+         phone number:<br>
+         <input type="number" name ="phoneno"[(ngModel)]="phoneno"> <br><br>
+         
+         
+        
+    <button (click)="booking()">Confirm Booking</button>
+      </form>
+      
+      
+
+
+<div id="left-menu">
+
+        <app-nav *ngFor="let page of pages" [page]="page.page" [name]="page.name" [fullnames]="fullnames"  [dateofbirth]="dateofbirth" [age]="age" [date]="date" [from]="from" [to]="to" [phoneno]="phoneno"></app-nav>
+
+</div>
+<router-outlet></router-outlet>
+</body>
